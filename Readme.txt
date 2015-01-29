@@ -1,3 +1,1 @@
-Java jdbc
-sql script
-xquery
+Including normal sql query practice, JDBC, spatial query, parsing xml and Xquery
