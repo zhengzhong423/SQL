@@ -1,0 +1,2 @@
+select distinct y.reviewer from reviews v, XMLTABLE('/reviews/review' Passing v.data COLUMNS book_title varchar2(40) PATH 'book_title', reviewer varchar(40) PATH 'reviewer') y, books b,XMLTABLE('/books/book' Passing b.data COLUMNS title varchar2(40) PATH 'title',price number PATH 'price',publish_date date PATH 'publish_date') x
+where y.book_title=x.title and x.price>25.00 and EXTRACT(MONTH FROM TO_DATE(x.publish_date, 'DD-MON-RR'))>=8;

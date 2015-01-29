@@ -1,0 +1,1 @@
+SELECT POST.content FROM POST,USERs WHERE POST.Datetime>'2014/01/01 00:00'AND USERs.Name='Jackie Chan' AND USERs.UserID=POST.SenderID;

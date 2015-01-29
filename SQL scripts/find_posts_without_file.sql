@@ -1,0 +1,1 @@
+SELECT POST.content FROM POST,USERs WHERE (DATE_FORMAT(datetime,'%m') ='01') AND USERs.Name='Jackie Chan' AND USERs.UserID=POST.SenderID AND POST.ATTACHEDresource is null; 

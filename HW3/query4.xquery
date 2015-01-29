@@ -1,0 +1,2 @@
+select distinct y.book_title, avg(y.rating) from reviews v, XMLTABLE('/reviews/review' Passing v.data COLUMNS book_title varchar2(40) PATH 'book_title', rating integer PATH 'rating') y
+group by y.book_title order by avg(y.rating) desc;

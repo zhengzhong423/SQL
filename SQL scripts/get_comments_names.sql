@@ -1,0 +1,1 @@
+SELECT DISTINCT USERS.NAME FROM USERS, COMMENT, POST, GROUPS WHERE GROUPNAME='University Of Southern California' AND Groups.GroupID=POST.SenderID AND Groups.GroupID=POST.ReceiverID AND ShareType='public' AND POST.PostID=COMMENT.PostID AND Comment.SenderID=Users.UserID AND POST.DATETIME>'2014/01/01 00:00';

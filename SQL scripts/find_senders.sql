@@ -1,0 +1,1 @@
+SELECT DISTINCT USERs.Name FROM USERs,COMMENT WHERE Users.USERID=comment.SenderID AND comment.senderid in (SELECT comment.senderid FROM COMMENT,users,post where (comment.postid=post.PostID and Post.receiverID=USERs.UserID AND USERs.Name='Jackie Chan' ) GROUP BY comment.PostID HAVING COUNT(comment.senderID)>=2);

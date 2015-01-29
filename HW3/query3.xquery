@@ -1,0 +1,2 @@
+select distinct y.reviewer, y.book_title from reviews v, XMLTABLE('/reviews/review' Passing v.data COLUMNS book_title varchar2(40) PATH 'book_title', reviewer varchar(40) PATH 'reviewer') y, books b,XMLTABLE('/books/book' Passing b.data COLUMNS title varchar2(40) PATH 'title') x
+where y.book_title=x.title order by y.reviewer, y.book_title asc;

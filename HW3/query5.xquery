@@ -1,0 +1,2 @@
+select distinct y.reviewer,count(y.rating) as count,avg(y.rating) from reviews v, XMLTABLE('/reviews/review' Passing v.data COLUMNS rating integer PATH 'rating',reviewer varchar2(40) PATH 'reviewer') y
+group by y.reviewer order by avg(y.rating) desc;

@@ -1,0 +1,29 @@
+﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="books">
+  <xs:complexType>
+   <xs:sequence>
+     <xs:element ref="book" minOccurs='0' maxOccurs='unbounded'/>
+   </xs:sequence>
+ </xs:complexType>
+</xs:element>
+<xs:element name="book">
+ <xs:complexType>
+  <xs:sequence>
+   <xs:element name="id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+   <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+   <xs:element name="author" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+   <xs:element name="price" type="xs:string" minOccurs="1" maxOccurs="1"/>
+   <xs:element name="isbn" minOccurs="1" maxOccurs="1">
+    <xs:simpleType>
+     <xs:restriction base="xs:string">
+     <xs:pattern value="\d{1}-\d{5}-\d{3}-\d{1}"/>
+     <xs:pattern value="\d{1}-\d{3}-\d{5}-\d{1}"/>
+     <xs:pattern value="\d{1}-\d{2}-\d{6}-\d{1}"/>
+    </xs:restriction>
+    </xs:simpleType>
+   </xs:element> 
+   <xs:element name="publish_date" type="xs:date"/>   
+  </xs:sequence>
+ </xs:complexType>
+</xs:element>
+</xs:schema>
